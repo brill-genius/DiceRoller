@@ -18,14 +18,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     private EditText usernetry;
+    private TextView mgTv;
+    private TextView counterpoints;
+    private TextView viewpoints;
+    private int points = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         usernetry = (EditText) findViewById(R.id.usernetry);
+
+        counterpoints = (TextView) findViewById(R.id.cp);
+        viewpoints = (TextView) findViewById(R.id.vp);
         
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -81,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (n == number) {
 
             Toast.makeText(this, "Congratulations, you got the right number!", Toast.LENGTH_SHORT).show();
-        }
+            points = points + 1;
+            counterpoints.setText(Integer.toString(points));
 
+        }
     }
 }

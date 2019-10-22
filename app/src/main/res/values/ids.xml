@@ -4,4 +4,8 @@
     <item name="numberEntered" type="id" />
     <item name="msg" type="id" />
     <item name="usernetry" type="id" />
+    <item name="counter" type="id" />
+    <item name="cview" type="id" />
+    <item name="vp" type="id" />
+    <item name="cp" type="id" />
 </resources>
