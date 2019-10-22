@@ -8,16 +8,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private EditText usernetry;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        usernetry = (EditText) findViewById(R.id.usernetry);
+        
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -60,5 +69,19 @@ public class MainActivity extends AppCompatActivity {
         Random r = new Random();
         int number = r.nextInt(7);
         tv.setText(Integer.toString(number));
+
+        int n = Integer.parseInt(usernetry.getText().toString());
+
+
+
+        if (n < 1 || n > 6) {
+
+            Toast.makeText(this, "Invalid input, number must be within range", Toast.LENGTH_SHORT).show();
+
+        } else if (n == number) {
+
+            Toast.makeText(this, "Congratulations, you got the right number!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
