@@ -8,4 +8,6 @@
     <item name="cview" type="id" />
     <item name="vp" type="id" />
     <item name="cp" type="id" />
+    <item name="list" type="id" />
+    <item name="viewlist" type="id" />
 </resources>

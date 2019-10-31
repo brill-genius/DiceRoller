@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView mgTv;
     private TextView counterpoints;
     private TextView viewpoints;
+    private TextView list;
     private int points = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        list = (TextView) this.findViewById(R.id.viewlist);
 
         usernetry = (EditText) findViewById(R.id.usernetry);
 
@@ -91,5 +94,21 @@ public class MainActivity extends AppCompatActivity {
             counterpoints.setText(Integer.toString(points));
 
         }
+    }
+
+    public void dicebutton(View view){
+
+        ArrayList<String> randomlist = new ArrayList<String>();
+
+        randomlist.add("If you could go anywhere in the world, where would you go?");
+        randomlist.add("If you were stranded on a desert island, what three things would you want to take with you?");
+        randomlist.add("If you could eat only one food for the rest of your life, what would that be?");
+        randomlist.add("If you won a million dollars, what is the first thing you would buy?");
+        randomlist.add("If you could spaned the day with one fictional character, who would it be?");
+        randomlist.add("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
+
+        int randomnum = (int) (Math.random()*6);
+        list.setText(randomlist.get(randomnum));
+
     }
 }
