@@ -107,8 +107,18 @@ public class MainActivity extends AppCompatActivity {
         randomlist.add("If you could spaned the day with one fictional character, who would it be?");
         randomlist.add("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
 
-        int randomnum = (int) (Math.random()*6);
-        list.setText(randomlist.get(randomnum));
+
+        int numberOfElements = 1;
+
+        Random randomnumber = new Random();
+
+        for (int i = 0; i < numberOfElements; i++) {
+
+
+            int randomIndex = randomnumber.nextInt(randomlist.size());
+            String randomElement = randomlist.get(randomIndex);
+            list.setText(randomElement);
+        }
 
     }
 }
